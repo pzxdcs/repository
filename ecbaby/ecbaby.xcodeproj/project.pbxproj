@@ -16,6 +16,8 @@
 		CC27195C1C08054400A1D5C7 /* ecbabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27195B1C08054400A1D5C7 /* ecbabyTests.m */; };
 		CC2719681C080C0000A1D5C7 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2719671C080C0000A1D5C7 /* MainVC.m */; };
 		CC27196D1C08322F00A1D5C7 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27196C1C08322F00A1D5C7 /* GuideVC.m */; };
+		CC4BFFF81C11BCC500FF788E /* collectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFFF71C11BCC500FF788E /* collectCell.m */; };
+		CC4BFFFB1C11BD0F00FF788E /* collectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFFFA1C11BD0F00FF788E /* collectVC.m */; };
 		CC7674C61C116DED000DF730 /* searchDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7674C51C116DED000DF730 /* searchDetailCell.m */; };
 		CC7674C91C11711E000DF730 /* NSString+TextHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7674C81C11711E000DF730 /* NSString+TextHeight.m */; };
 		CC7A837E1C1028EA00CFB2E6 /* searchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A837D1C1028EA00CFB2E6 /* searchResultVC.m */; };
@@ -95,6 +97,10 @@
 		CC2719671C080C0000A1D5C7 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		CC27196B1C08322F00A1D5C7 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		CC27196C1C08322F00A1D5C7 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		CC4BFFF61C11BCC500FF788E /* collectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectCell.h; sourceTree = "<group>"; };
+		CC4BFFF71C11BCC500FF788E /* collectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectCell.m; sourceTree = "<group>"; };
+		CC4BFFF91C11BD0F00FF788E /* collectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectVC.h; sourceTree = "<group>"; };
+		CC4BFFFA1C11BD0F00FF788E /* collectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectVC.m; sourceTree = "<group>"; };
 		CC7674C41C116DED000DF730 /* searchDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchDetailCell.h; sourceTree = "<group>"; };
 		CC7674C51C116DED000DF730 /* searchDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchDetailCell.m; sourceTree = "<group>"; };
 		CC7674C71C11711E000DF730 /* NSString+TextHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextHeight.h"; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 		CC2719651C080BC900A1D5C7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFFF51C11B40400FF788E /* 我的收藏 */,
 				CCA5EDFC1C0C713A00E0ECEC /* 热搜榜 */,
 				CCF5ECD91C0C458F0040E55C /* SettingVC */,
 				CCF5ECAD1C0BF4E10040E55C /* loginVC */,
@@ -310,6 +317,15 @@
 				CC27196C1C08322F00A1D5C7 /* GuideVC.m */,
 			);
 			name = GuideVC;
+			sourceTree = "<group>";
+		};
+		CC4BFFF51C11B40400FF788E /* 我的收藏 */ = {
+			isa = PBXGroup;
+			children = (
+				CC4BFFF91C11BD0F00FF788E /* collectVC.h */,
+				CC4BFFFA1C11BD0F00FF788E /* collectVC.m */,
+			);
+			name = "我的收藏";
 			sourceTree = "<group>";
 		};
 		CC7A836F1C0FDB8800CFB2E6 /* searchModel */ = {
@@ -462,6 +478,8 @@
 				CC7A83831C1030C500CFB2E6 /* searchResultCell.m */,
 				CC7674C41C116DED000DF730 /* searchDetailCell.h */,
 				CC7674C51C116DED000DF730 /* searchDetailCell.m */,
+				CC4BFFF61C11BCC500FF788E /* collectCell.h */,
+				CC4BFFF71C11BCC500FF788E /* collectCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -597,6 +615,7 @@
 				CC2719681C080C0000A1D5C7 /* MainVC.m in Sources */,
 				CC7A83D71C1044DD00CFB2E6 /* AFHTTPRequestOperationManager.m in Sources */,
 				CC7A83BE1C10449900CFB2E6 /* UIImage+WebP.m in Sources */,
+				CC4BFFFB1C11BD0F00FF788E /* collectVC.m in Sources */,
 				CC2719451C08054400A1D5C7 /* AppDelegate.m in Sources */,
 				CC7674C91C11711E000DF730 /* NSString+TextHeight.m in Sources */,
 				CC7A83BB1C10449900CFB2E6 /* UIButton+WebCache.m in Sources */,
@@ -615,6 +634,7 @@
 				CC7A843F1C1045B000CFB2E6 /* ISRDataHelper.m in Sources */,
 				CC7A83811C102A0100CFB2E6 /* searchModel.m in Sources */,
 				CC7A83BF1C10449900CFB2E6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				CC4BFFF81C11BCC500FF788E /* collectCell.m in Sources */,
 				CCF5ECDC1C0C45BD0040E55C /* SettingVC.m in Sources */,
 				CC7A83B71C10449900CFB2E6 /* SDWebImageDownloader.m in Sources */,
 				CC7A83B51C10449900CFB2E6 /* SDWebImageCompat.m in Sources */,

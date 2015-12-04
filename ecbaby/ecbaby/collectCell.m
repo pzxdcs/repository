@@ -1,17 +1,16 @@
 //
-//  searchResultCell.m
+//  collectCell.m
 //  ecbaby
 //
-//  Created by qingyun on 15/12/3.
+//  Created by qingyun on 15/12/4.
 //  Copyright © 2015年 张雪城. All rights reserved.
 //
 
-#import "searchResultCell.h"
+#import "collectCell.h"
 #import "searchModel.h"
 #import "UIImageView+WebCache.h"
-#import "common.h"
 
-@implementation searchResultCell
+@implementation collectCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -29,10 +28,8 @@
     NSString *urlstr = [model.image[0]stringByAppendingString:@"_middle.jpg"];
     NSURL *url = [NSURL URLWithString:urlstr];
     [self.image sd_setImageWithURL:url];
-
     
-   
-   
-    
+     
 }
+
 @end

@@ -35,6 +35,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     if ([[loginModel currentLogin]isLogin]) {
         self.navigationItem.rightBarButtonItem = nil;
     }else{
@@ -108,7 +109,7 @@
 
 - (IBAction)editBegin:(UITextField *)sender {
     [UIView animateWithDuration:.32 animations:^{
-    self.tabBarController.view.transform = CGAffineTransformMakeTranslation(0, -120);
+    self.tabBarController.view.transform = CGAffineTransformMakeTranslation(0, -150);
     }];
 
 
@@ -119,26 +120,33 @@
     }];
 }
 - (IBAction)hideKeyBoard:(UITextField *)sender {
-    [sender resignFirstResponder];
+    [self.view endEditing:YES];
 }
 - (IBAction)go:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [NSTimer scheduledTimerWithTimeInterval:.5f target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
+    
+    
+}
+- (void)delayMethod{
+    
     if (_textField == nil || [_textField.text isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"搜索内容不能为空" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [alert show];
         
     }else{
+        
         searchResultVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResult"];
         [self.navigationController pushViewController:vc animated:YES];
         vc.keywards = _textField.text;
-
-   //     NSLog(@"=======%@======",vc.text);
+        
+        //     NSLog(@"=======%@======",vc.text);
         
         
     }
-    
+
     
 }
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];

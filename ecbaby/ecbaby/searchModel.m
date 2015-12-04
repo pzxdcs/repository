@@ -15,6 +15,7 @@
     self.title = dic[@"title"];
     self.content = dic[@"description"];
     self.image = dic[@"images"];
+    self.msgid = dic[@"msgid"];
     return self;
 }
 

@@ -13,6 +13,7 @@
 @property(strong, nonatomic)NSString *username;
 @property(strong, nonatomic)NSString *content;
 @property(strong,nonatomic)NSArray *image;
+@property(strong, nonatomic)NSString *msgid;
 -(instancetype)initWithDic:(NSDictionary *)dic;
 
 @end
