@@ -16,6 +16,8 @@
 		CC27195C1C08054400A1D5C7 /* ecbabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27195B1C08054400A1D5C7 /* ecbabyTests.m */; };
 		CC2719681C080C0000A1D5C7 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2719671C080C0000A1D5C7 /* MainVC.m */; };
 		CC27196D1C08322F00A1D5C7 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27196C1C08322F00A1D5C7 /* GuideVC.m */; };
+		CC7674C61C116DED000DF730 /* searchDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7674C51C116DED000DF730 /* searchDetailCell.m */; };
+		CC7674C91C11711E000DF730 /* NSString+TextHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7674C81C11711E000DF730 /* NSString+TextHeight.m */; };
 		CC7A837E1C1028EA00CFB2E6 /* searchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A837D1C1028EA00CFB2E6 /* searchResultVC.m */; };
 		CC7A83811C102A0100CFB2E6 /* searchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A83801C102A0100CFB2E6 /* searchModel.m */; };
 		CC7A83841C1030C500CFB2E6 /* searchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A83831C1030C500CFB2E6 /* searchResultCell.m */; };
@@ -58,6 +60,7 @@
 		CCA5EE341C0C833F00E0ECEC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5EE331C0C833F00E0ECEC /* AddressBook.framework */; };
 		CCA5EE361C0C834800E0ECEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5EE351C0C834800E0ECEC /* QuartzCore.framework */; };
 		CCA5EE381C0C835200E0ECEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5EE371C0C835200E0ECEC /* CoreGraphics.framework */; };
+		CCC785481C113058002CD672 /* searchDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC785471C113058002CD672 /* searchDetailVC.m */; };
 		CCF5ECA91C0BF3CC0040E55C /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF5ECA81C0BF3CC0040E55C /* HomeVC.m */; };
 		CCF5ECAC1C0BF4D60040E55C /* loginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF5ECAB1C0BF4D60040E55C /* loginVC.m */; };
 		CCF5ECB61C0C23910040E55C /* loginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF5ECB51C0C23910040E55C /* loginModel.m */; };
@@ -92,6 +95,10 @@
 		CC2719671C080C0000A1D5C7 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		CC27196B1C08322F00A1D5C7 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		CC27196C1C08322F00A1D5C7 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		CC7674C41C116DED000DF730 /* searchDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchDetailCell.h; sourceTree = "<group>"; };
+		CC7674C51C116DED000DF730 /* searchDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchDetailCell.m; sourceTree = "<group>"; };
+		CC7674C71C11711E000DF730 /* NSString+TextHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextHeight.h"; sourceTree = "<group>"; };
+		CC7674C81C11711E000DF730 /* NSString+TextHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextHeight.m"; sourceTree = "<group>"; };
 		CC7A837C1C1028EA00CFB2E6 /* searchResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchResultVC.h; sourceTree = "<group>"; };
 		CC7A837D1C1028EA00CFB2E6 /* searchResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchResultVC.m; sourceTree = "<group>"; };
 		CC7A837F1C102A0100CFB2E6 /* searchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchModel.h; sourceTree = "<group>"; };
@@ -169,6 +176,8 @@
 		CCA5EE331C0C833F00E0ECEC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		CCA5EE351C0C834800E0ECEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CCA5EE371C0C835200E0ECEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CCC785461C113058002CD672 /* searchDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchDetailVC.h; sourceTree = "<group>"; };
+		CCC785471C113058002CD672 /* searchDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchDetailVC.m; sourceTree = "<group>"; };
 		CCF5ECA71C0BF3CC0040E55C /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		CCF5ECA81C0BF3CC0040E55C /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		CCF5ECAA1C0BF4D60040E55C /* loginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginVC.h; sourceTree = "<group>"; };
@@ -315,6 +324,8 @@
 		CC7A838D1C1043F000CFB2E6 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				CC7674C71C11711E000DF730 /* NSString+TextHeight.h */,
+				CC7674C81C11711E000DF730 /* NSString+TextHeight.m */,
 				CC7A843D1C1045B000CFB2E6 /* ISRDataHelper.h */,
 				CC7A843E1C1045B000CFB2E6 /* ISRDataHelper.m */,
 				CC7A83E21C10451C00CFB2E6 /* UITableView+IndexWithIndexPath.h */,
@@ -401,6 +412,8 @@
 				CCA5EE011C0C722D00E0ECEC /* hotSearchVC.m */,
 				CC7A837C1C1028EA00CFB2E6 /* searchResultVC.h */,
 				CC7A837D1C1028EA00CFB2E6 /* searchResultVC.m */,
+				CCC785461C113058002CD672 /* searchDetailVC.h */,
+				CCC785471C113058002CD672 /* searchDetailVC.m */,
 			);
 			name = "热搜榜";
 			sourceTree = "<group>";
@@ -447,6 +460,8 @@
 				CC2719491C08054400A1D5C7 /* Main.storyboard */,
 				CC7A83821C1030C500CFB2E6 /* searchResultCell.h */,
 				CC7A83831C1030C500CFB2E6 /* searchResultCell.m */,
+				CC7674C41C116DED000DF730 /* searchDetailCell.h */,
+				CC7674C51C116DED000DF730 /* searchDetailCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -583,6 +598,7 @@
 				CC7A83D71C1044DD00CFB2E6 /* AFHTTPRequestOperationManager.m in Sources */,
 				CC7A83BE1C10449900CFB2E6 /* UIImage+WebP.m in Sources */,
 				CC2719451C08054400A1D5C7 /* AppDelegate.m in Sources */,
+				CC7674C91C11711E000DF730 /* NSString+TextHeight.m in Sources */,
 				CC7A83BB1C10449900CFB2E6 /* UIButton+WebCache.m in Sources */,
 				CC7A83B81C10449900CFB2E6 /* SDWebImageDownloaderOperation.m in Sources */,
 				CC2719421C08054400A1D5C7 /* main.m in Sources */,
@@ -605,6 +621,7 @@
 				CCF5ECA91C0BF3CC0040E55C /* HomeVC.m in Sources */,
 				CC7A83BC1C10449900CFB2E6 /* UIImage+GIF.m in Sources */,
 				CC7A83BD1C10449900CFB2E6 /* UIImage+MultiFormat.m in Sources */,
+				CCC785481C113058002CD672 /* searchDetailVC.m in Sources */,
 				CC7A83D91C1044DD00CFB2E6 /* AFNetworkReachabilityManager.m in Sources */,
 				CCA5EE021C0C722D00E0ECEC /* hotSearchVC.m in Sources */,
 				CC7A83BA1C10449900CFB2E6 /* SDWebImagePrefetcher.m in Sources */,
@@ -613,6 +630,7 @@
 				CC7A83B21C10449900CFB2E6 /* MKAnnotationView+WebCache.m in Sources */,
 				CC7A83E11C1044F800CFB2E6 /* NSString+DocumentFilePath.m in Sources */,
 				CC7A83C01C10449900CFB2E6 /* UIImageView+WebCache.m in Sources */,
+				CC7674C61C116DED000DF730 /* searchDetailCell.m in Sources */,
 				CC7A83C11C10449900CFB2E6 /* UIView+WebCacheOperation.m in Sources */,
 				CC7A83B91C10449900CFB2E6 /* SDWebImageManager.m in Sources */,
 				CCF5ECAC1C0BF4D60040E55C /* loginVC.m in Sources */,

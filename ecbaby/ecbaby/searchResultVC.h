@@ -10,5 +10,6 @@
 
 @interface searchResultVC : UITableViewController
 @property(strong ,nonatomic)NSString *keywards;
+@property(nonatomic,strong)NSArray *data;
 
 @end

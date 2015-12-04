@@ -11,11 +11,12 @@
 #import "searchModel.h"
 #import "common.h"
 #import "searchResultCell.h"
+#import "searchDetailVC.h"
 
 
 @interface searchResultVC ()<UITableViewDelegate,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property(nonatomic,strong)NSArray *data;
+
 @property(nonatomic,assign) int page;
 //@property (nonatomic)BOOL isLoadMore;
 
@@ -27,11 +28,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _textField.text = _keywards;
-    self.title = _keywards;
+    self.title = @"搜索结果";
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
     self.tableView.showsVerticalScrollIndicator =
     NO;
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     [self loadData];
 }
 - (void)didReceiveMemoryWarning {
@@ -55,6 +61,7 @@
         [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             searchModel *model = [[searchModel alloc]initWithDic:obj];
             [resultArr addObject:model];
+            
         }];
         self.data = resultArr;
         [self.tableView reloadData];
@@ -101,65 +108,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     searchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell" forIndexPath:indexPath];
     [cell setMOdel:self.data[indexPath.row]];
+    
 
     
    
     
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    searchDetailVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailVC"];
+    [self.navigationController pushViewController:VC animated:YES];
+    searchModel *model = self.data[indexPath.row];
+    VC.titl = model.title;
+    VC.username = model.username;
+    VC.content = model.content;
+    VC.urlstr = [model.image[0]stringByAppendingString:@"_large.jpg"];
+    
+  
+}
 
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == self.data.count-1) {
+    if (indexPath.row == self.data.count-3) {
         [self reloadmore];
     }
 }
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [self.view endEditing:YES];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -28,6 +28,7 @@
     NSString *urlstr = [model.image[0]stringByAppendingString:@"_middle.jpg"];
     NSURL *url = [NSURL URLWithString:urlstr];
     [self.image sd_setImageWithURL:url];
+
     
    
    
