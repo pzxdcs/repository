@@ -7,8 +7,10 @@
 //
 
 #import "hotSearchVC.h"
+#import "searchResultVC.h"
 
 @interface hotSearchVC ()
+@property (weak, nonatomic) IBOutlet UITextField *textfield;
 
 @end
 
@@ -18,10 +20,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _textfield.text = @"";
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)searchButton:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [NSTimer scheduledTimerWithTimeInterval:.3f target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
+}
+- (void)delayMethod{
+    
+    if (_textfield == nil || [_textfield.text isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"搜索内容不能为空" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }else{
+        
+        searchResultVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResult"];
+        [self.navigationController pushViewController:vc animated:YES];
+        vc.keywards = _textfield.text;
+        
+        //     NSLog(@"=======%@======",vc.text);
+        
+        
+    }
+    
+    
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 /*

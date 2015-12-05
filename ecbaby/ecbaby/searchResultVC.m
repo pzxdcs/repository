@@ -17,6 +17,7 @@
 
 @interface searchResultVC ()<UITableViewDelegate,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic)NSDictionary *dic;
 
 @property(nonatomic,assign) int page;
 //@property (nonatomic)BOOL isLoadMore;
@@ -145,11 +146,22 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:kBaseURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%@",responseObject);
+            int code = [responseObject[@"code"] intValue];
+            if (code==0) {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您已经收藏过" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+                [alert show];
+                
+            }else {
+                
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"收藏成功" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
-        
-        
+
     }else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请先登录" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [alert show];
