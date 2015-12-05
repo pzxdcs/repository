@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的收藏";
     [self loadData];
     
     // Uncomment the following line to preserve selection between presentations.

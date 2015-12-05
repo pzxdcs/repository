@@ -146,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSX-CN-vd9">
-                                <rect key="frame" x="31" y="84" width="194" height="30"/>
+                                <rect key="frame" x="40" y="84" width="194" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="FLw-5T-YmA"/>
@@ -156,25 +156,54 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Js-DM-7zj">
-                                <rect key="frame" x="227" y="84" width="33" height="30"/>
+                                <rect key="frame" x="236" y="84" width="33" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="33" id="3b6-9Q-AS7"/>
                                     <constraint firstAttribute="height" constant="30" id="9hq-pu-PAQ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="paH-KX-UDE" eventType="touchUpInside" id="uqn-7n-KMP"/>
+                                </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PZR-SY-13k">
+                                <rect key="frame" x="0.0" y="149" width="320" height="98"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cFA-Ci-42E">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RQm-TB-Y9Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BSX-CN-vd9" firstAttribute="centerX" secondItem="y93-Jv-DD1" secondAttribute="centerX" multiplier="4/5" id="0ug-LL-zUm"/>
+                            <constraint firstItem="BSX-CN-vd9" firstAttribute="centerX" secondItem="y93-Jv-DD1" secondAttribute="centerX" multiplier="6/7" id="0ug-LL-zUm"/>
                             <constraint firstItem="4Js-DM-7zj" firstAttribute="top" secondItem="N1Q-bf-Uzf" secondAttribute="bottom" constant="20" id="4CX-3F-GJR"/>
                             <constraint firstItem="BSX-CN-vd9" firstAttribute="top" secondItem="N1Q-bf-Uzf" secondAttribute="bottom" constant="20" id="Kdv-iU-Tn5"/>
                             <constraint firstItem="4Js-DM-7zj" firstAttribute="leading" secondItem="BSX-CN-vd9" secondAttribute="trailing" constant="2" id="bXp-un-39K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IS0-a3-ibe"/>
+                    <connections>
+                        <outlet property="textfield" destination="BSX-CN-vd9" id="0jw-bf-zR4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-Gi-mZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,14 +213,14 @@
         <scene sceneID="tdY-Bw-OeU">
             <objects>
                 <tableViewController id="cFp-JG-sa2" customClass="collectVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="126" sectionHeaderHeight="18" sectionFooterHeight="18" id="tXE-4j-mdR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" id="tXE-4j-mdR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="NpT-Io-z2D" customClass="collectCell">
-                                <rect key="frame" x="0.0" y="113.5" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NpT-Io-z2D" id="VHv-fz-IQ5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>

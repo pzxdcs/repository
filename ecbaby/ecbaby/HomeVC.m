@@ -124,7 +124,7 @@
 }
 - (IBAction)go:(UIButton *)sender {
     [self.view endEditing:YES];
-    [NSTimer scheduledTimerWithTimeInterval:.5f target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:.3f target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
     
     
 }
