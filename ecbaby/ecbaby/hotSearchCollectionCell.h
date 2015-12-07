@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface hotSearchCollectionCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
